@@ -1,0 +1,337 @@
+.page-home {
+  .dashboard {
+    &-content-flex {
+      justify-content: space-between;
+    }
+    &-main-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0px 0px 0.35em;
+    }
+    &-main-subtitle {
+      font-size: 0.928571rem;
+    }
+    &-content-main {
+      color: rgba(0, 0, 0, 0.87);
+      transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      border-radius: 4px;
+      padding: 48px;
+      flex: 1 1 0%;
+      background: rgb(247, 249, 252);
+      .filter-icon {
+        @include pxRem(margin-right, 8);
+      }
+      .css-i4bv87-MuiSvgIcon-root {
+        width: 20px;
+        height: 20px;
+      }
+      .btn-today {
+        font-size: 0.8125rem;
+        text-transform: capitalize;
+      }
+    }
+    &-sidebar,
+    &-content-background {
+      @include pxRem(min-height, 64);
+      border-radius: 0;
+    }
+    &-name {
+      @include pxRem(margin-left, 4);
+      font-size: 1.0625rem;
+    }
+    &-name,
+    &-sidebar {
+      color: rgb(238, 238, 238);
+    }
+    &-home {
+      @include pxRem(padding, 8 24);
+      @include pxRem(min-height, 64);
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    &-badge {
+      @include pxRem(border-radius, 5);
+      @include pxRem(height, 18);
+      @include pxRem(margin, -16 0 0 2);
+      @include pxRem(padding, 3 0);
+      background-color: rgb(56, 142, 60);
+      color: rgb(255, 255, 255);
+      font-size: 65%;
+      span {
+        @include pxRem(padding, 0 5.5 0 5.5);
+      }
+    }
+    &-sidebar {
+      min-height: 100vh;
+      // @include pxRem(padding, 8 24);
+      background-color: rgb(35 48 68);
+      transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      cursor: pointer;
+      svg {
+        @include pxRem(margin-right, 8);
+        @include pxRem(width, 32);
+        @include pxRem(height, 32);
+        color: rgb(71, 130, 218);
+        fill: rgb(71, 130, 218);
+      }
+    }
+    &-content {
+      &-background {
+        background-color: rgb(255, 255, 255);
+        color: rgb(158, 158, 158);
+      }
+      &-input {
+        :hover {
+          background: rgb(242, 242, 242);
+        }
+        input {
+          border-radius: 0;
+          color: rgb(66, 66, 66);
+          padding: 10px 10px 10px 48px;
+          width: 160px;
+          height: 1.4375em;
+          border: none;
+          box-shadow: none;
+        }
+      }
+      &-toolbar {
+        @include pxRem(padding, 0 12 0 12);
+      }
+      .css-96uuyl {
+        margin: 0;
+      }
+      &-grid {
+        justify-content: space-between;
+      }
+      &-hr {
+        @include pxRem(margin, 24 0);
+      }
+    }
+    &-sidebar-route-title {
+      @include pxRem(padding, 16 28 4);
+      line-height: 1.57;
+      color: rgb(238, 238, 238);
+      font-size: 0.696429rem;
+      opacity: 0.4;
+      position: relative;
+      background: rgb(35, 48, 68);
+    }
+    &-sidebar-list {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+    &-sidebar-item {
+      @include pxRem(padding-left, 90);
+      width: 100%;
+      color: rgba(238, 238, 238, 0.7);
+      &:focus {
+        background-color: rgb(30, 41, 58);
+        color: rgb(238, 238, 238);
+      }
+    }
+    &-sidebar-text {
+      span {
+        @include pxRem(font-size, 13);
+      }
+    }
+    &-sidebar-list-title {
+      @include pxRem(padding-right, 32);
+      @include pxRem(padding-left, 32);
+    }
+    &-sidebar-list-name {
+      @include pxRem(padding, 0 16);
+      span {
+        @include pxRem(font-size, 13);
+      }
+    }
+    &-sidebar-list-icon {
+      @include pxRem(min-width, 40);
+      @include pxRem(padding-left, 10);
+      svg {
+        color: rgb(238, 238, 238);
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        fill: rgb(238, 238, 238);
+      }
+    }
+    &-sidebar-close,
+    &-sidebar-open {
+      color: rgb(238, 238, 238);
+      font-size: 20px;
+      width: 20px !important;
+      height: 20px !important;
+      opacity: 0.5;
+      fill: rgb(238, 238, 238) !important;
+    }
+  }
+  .card-grid-item:not(:first-child) {
+    @include pxRem(padding-left, 24);
+  }
+  .card-grid-content {
+    @include pxRem(padding, 16 !important);
+    position: relative;
+  }
+  .css-46bh2p-MuiCardContent-root {
+    @include pxRem(padding-bottom, 16);
+  }
+  .card-item-title {
+    @include pxRem(margin, 0 0 16);
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  .card-item-number {
+    margin: 0px 0px 12px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  .card-item-percent {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.8125rem;
+  }
+  .card-item-chip {
+    font-size: 85%;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    height: 20px;
+    background-color: rgb(71, 130, 218);
+    border-radius: 6px;
+    span {
+      @include pxRem(line-height, 10);
+      @include pxRem(padding, 0 8);
+    }
+  }
+  .card-grid-item:nth-child(4) > .card-grid {
+    background-color: rgba(55, 111, 208, 0.125);
+    color: rgb(55, 111, 208);
+  }
+  .card-grid-item:nth-child(odd) .card-item-percent span {
+    color: rgb(76, 175, 80);
+    font-weight: 600;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 2px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+  .card-grid-item:nth-child(2n) .card-item-percent span {
+    color: rgb(244, 67, 54);
+    font-weight: 600;
+    background: rgba(244, 67, 54, 0.1);
+    padding: 2px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+  .chart-line-grid {
+    @include pxRem(padding, 16);
+  }
+  .chart-line,
+  .chart-doughnut {
+    @include pxRem(padding-top, 24);
+  }
+  .chart-doughnut {
+    @include pxRem(padding-left, 24);
+    .card-header {
+      @include pxRem(padding, 16 0 16 0);
+    }
+    &-box {
+      @include pxRem(height, 168);
+      position: relative;
+    }
+    &-statistical {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      margin-top: -22px;
+      text-align: center;
+      z-index: 0;
+      transform: translateY(10px);
+    }
+    &-percent {
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+    &-span {
+      font-size: 0.696429rem;
+    }
+    &-all {
+      @include pxRem(width, 180);
+      margin: 0 auto;
+    }
+    &-card {
+      padding: 0px 16px 24px 16px;
+    }
+  }
+  .table-doughnut {
+    // @include pxRem(padding-bottom, 24);
+    box-shadow: none;
+    td,
+    th {
+      border: none;
+      border-bottom: 1px solid rgb(224, 224, 224);
+      padding: 7px 16px;
+    }
+  }
+  .chart-bar {
+    @include pxRem(padding-top, 24);
+    &-header {
+      color: #4782da;
+      span {
+        line-height: 1.25;
+        font-size: 1rem;
+      }
+    }
+    &-grid {
+      @include pxRem(padding, 16 16 24 16);
+    }
+  }
+  .table-chart-bar {
+    padding: 24px 0 0 24px;
+    &-card-header {
+      span {
+        line-height: 1.25;
+        font-size: 1rem;
+      }
+    }
+  }
+  .table-bar {
+    &-all {
+      box-shadow: none;
+    }
+    td,
+    th {
+      border: none;
+      border-bottom: 1px solid rgb(224, 224, 224);
+      padding: 14px 16px;
+    }
+    &-chip {
+      padding: 4px 0;
+      border-radius: 6px;
+      height: 20px;
+      font-size: 90%;
+      color: rgb(255, 255, 255);
+    }
+  }
+  .footer {
+    @include pxRem(padding, 1 16);
+    &-left,
+    &-right {
+      span {
+        color: rgb(158, 158, 158);
+        font-size: 13px;
+      }
+    }
+  }
+  .css-1qvr50w-MuiTypography-root {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
