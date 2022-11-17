@@ -335,3 +335,50 @@
     line-height: 1.25;
   }
 }
+.message-menu-list,
+.notification-menu-list {
+  @include pxRem(width, 300 !important);
+  @include pxRem(left, 1124);
+  @include pxRem(top, 56!important);
+  box-shadow: rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  > ul {
+    padding: 0;
+  }
+}
+.message-title-box,
+.notification-title-box {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  .message-title,
+  .notification-title {
+    font-size: 0.928571rem;
+    line-height: 1.75;
+  }
+}
+.message-info,
+.noti-info {
+  span,
+  p {
+    font-size: 0.8125rem !important;
+  }
+  span {
+    line-height: 1.57 !important;
+    font-weight: 500 !important;
+  }
+  p {
+    line-height: 1.43 !important;
+  }
+}
+.message-btn-box,
+.notification-btn-box {
+  text-align: center;
+  &-content {
+    font-size: 0.754464rem;
+    text-transform: none !important;
+  }
+}
+.noti-background {
+  background-color: rgb(55, 111, 208) !important;
+}

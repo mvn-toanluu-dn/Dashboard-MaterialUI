@@ -58,7 +58,7 @@ const rows = [
 const TableBar = () => {
   return (
     <Grid className='table-chart-bar' item lg={8.24}>
-      <Card className='table-chart-bar-card'>
+      <Card elevation={0} className='table-chart-bar-card'>
         <Grid
           sx={{
             display: 'flex',

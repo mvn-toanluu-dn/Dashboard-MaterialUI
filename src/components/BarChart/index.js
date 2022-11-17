@@ -71,7 +71,7 @@ const options = {
 const BarChart = () => {
   return (
     <Grid className='chart-bar' item lg={3.76}>
-      <Card className='chart-bar-card'>
+      <Card elevation={0} className='chart-bar-card'>
         <Box
           component='div'
           sx={{

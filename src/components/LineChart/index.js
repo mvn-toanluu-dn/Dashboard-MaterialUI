@@ -74,7 +74,7 @@ const options = {
 const LineChart = () => {
   return (
     <Grid className='chart-line' item xs={12} lg={8}>
-      <Card>
+      <Card elevation={0}>
         <Box
           component='div'
           sx={{

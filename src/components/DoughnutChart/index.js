@@ -46,7 +46,7 @@ const options = {
 const DoughnutChart = () => {
   return (
     <Grid className='chart-doughnut' item xs={12} lg={4}>
-      <Card className='chart-doughnut-card'>
+      <Card elevation={0} className='chart-doughnut-card'>
         <Box
           component='div'
           sx={{

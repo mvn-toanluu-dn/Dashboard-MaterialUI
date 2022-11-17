@@ -1,16 +1,27 @@
-import { AppBar, Tooltip, Typography, Grid, Toolbar } from '@mui/material';
-import React from 'react';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import SearchIcon from '@mui/icons-material/Search';
+import {
+  AppBar,
+  Button,
+  Grid,
+  List,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
-import Popover from '@mui/material/Popover';
 import { alpha, styled } from '@mui/material/styles';
+import React from 'react';
+import ListMessage from '../../ListMessage';
+import ListNoti from '../../ListNoti';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -54,14 +65,29 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const [anchorEl3, setAnchorEl3] = React.useState(null);
   const open = Boolean(anchorEl);
+  const open2 = Boolean(anchorEl2);
+  const open3 = Boolean(anchorEl3);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleClick3 = (event) => {
+    setAnchorEl3(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const id = open ? 'simple-popover' : undefined;
+  const handleClose2 = () => {
+    setAnchorEl2(null);
+  };
+  const handleClose3 = () => {
+    setAnchorEl3(null);
+  };
   return (
     <AppBar
       elevation={0}
@@ -86,48 +112,105 @@ const Header = () => {
                 size='large'
                 aria-label='message'
                 color='inherit'
-                aria-haspopup={true}
-                aria-describedby={id}
-                variant='contained'
+                aria-controls={open ? 'message-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
               >
                 <Badge badgeContent={3} color='primary'>
-                  <ChatBubbleOutlineIcon onClick={handleClick} />
+                  <ChatBubbleOutlineIcon />
                 </Badge>
-
-                <Popover
-                  id={id}
-                  open={open}
-                  anchorEl={anchorEl}
-                  onClose={handleClose}
-                  anchorReference='anchorPosition'
-                  anchorPosition={{ top: 56, left: 1124 }}
-                  anchorOrigin={{
-                    vertical: 'center',
-                    horizontal: 'left',
-                  }}
-                  transformOrigin={{
-                    vertical: 'center',
-                    horizontal: 'center',
-                  }}
-                >
-                  <Typography sx={{ p: 2 }} component='h2'>
-                    The content of the Popover.
-                  </Typography>
-                </Popover>
               </IconButton>
             </Tooltip>
+            <Menu
+              elevation={0}
+              id='message-menu'
+              anchorEl={anchorEl}
+              open={open}
+              onClick={handleClose}
+              onClose={handleClose}
+              TransitionProps={{
+                className: 'message-menu-list',
+              }}
+            >
+              <Box className='message-title-box'>
+                <Typography
+                  className='message-title'
+                  variant='subtilte1'
+                  component='h6'
+                >
+                  3 New Messages
+                </Typography>
+              </Box>
+              <List disablePadding={true}>
+                <ListMessage />
+              </List>
+              <Box className='message-btn-box'>
+                <Button
+                  disableRipple={true}
+                  disableTouchRipple={true}
+                  disableFocusRipple={true}
+                  component='a'
+                  href='/#'
+                  size='small'
+                  className='message-btn-box-content'
+                >
+                  Show all messages
+                </Button>
+              </Box>
+            </Menu>
             <Tooltip title='Notifications'>
               <IconButton
                 size='large'
                 aria-label='notifications'
                 color='inherit'
-                aria-haspopup={true}
+                aria-controls={open3 ? 'notification-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open3 ? 'true' : undefined}
+                onClick={handleClick3}
               >
                 <Badge badgeContent={7} color='primary'>
                   <NotificationsNoneIcon />
                 </Badge>
               </IconButton>
             </Tooltip>
+            <Menu
+              elevation={0}
+              id='notification-menu'
+              anchorEl={anchorEl3}
+              open={open3}
+              onClick={handleClose3}
+              onClose={handleClose3}
+              TransitionProps={{
+                className: 'notification-menu-list',
+              }}
+            >
+              <Box className='notification-title-box'>
+                <Typography
+                  className='notification-title'
+                  variant='subtilte1'
+                  component='h6'
+                >
+                  7 New Notifications
+                </Typography>
+              </Box>
+              <List disablePadding={true}>
+                <ListNoti />
+              </List>
+              <Box className='notification-btn-box'>
+                <Button
+                  disableRipple={true}
+                  disableTouchRipple={true}
+                  disableFocusRipple={true}
+                  component='a'
+                  href='/#'
+                  size='small'
+                  className='notification-btn-box-content'
+                >
+                  Show all messages
+                </Button>
+              </Box>
+            </Menu>
             <Tooltip title='Languages'>
               <IconButton
                 size='large'
@@ -143,11 +226,25 @@ const Header = () => {
                 size='large'
                 aria-label='account'
                 color='inherit'
-                aria-haspopup={true}
+                onClick={handleClick2}
+                aria-controls={open ? 'account-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
               >
                 <PowerSettingsNewIcon />
               </IconButton>
             </Tooltip>
+            <Menu
+              elevation={0}
+              id='account-menu'
+              anchorEl={anchorEl2}
+              open={open2}
+              onClick={handleClose2}
+              onClose={handleClose2}
+            >
+              <MenuItem onClick={handleClose2}>Profile</MenuItem>
+              <MenuItem onClick={handleClose2}>Logout</MenuItem>
+            </Menu>
           </Box>
         </Grid>
       </Toolbar>
