@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import CardItem from '../CardItem';
+import CardItem from '../modules/CardItem';
 
 const CardList = () => {
   const [card, setCard] = useState([]);

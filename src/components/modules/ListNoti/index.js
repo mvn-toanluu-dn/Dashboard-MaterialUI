@@ -1,20 +1,20 @@
 import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import React from 'react';
-import { message } from '../../utils/data/data';
-const ListMessage = () => {
+import { noti } from '../../../utils/data/data';
+const ListNoti = () => {
   return (
     <>
-      {message.map((item, index) => {
+      {noti.map((item, index) => {
         return (
           <ListItem href='/#' component='a' divider={true} key={index}>
             <ListItemAvatar>
-              <Avatar alt='' src={item.avatar} />
+              <Avatar className='noti-background'>{item.avatar}</Avatar>
             </ListItemAvatar>
             <ListItemText
               variant='subtitle2'
               primary={item.name}
               secondary={item.content}
-              className='message-info'
+              className='noti-info'
             />
           </ListItem>
         );
@@ -23,4 +23,4 @@ const ListMessage = () => {
   );
 };
 
-export default ListMessage;
+export default ListNoti;

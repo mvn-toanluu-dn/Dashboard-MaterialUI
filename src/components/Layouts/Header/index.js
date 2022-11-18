@@ -20,8 +20,8 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import React from 'react';
-import ListMessage from '../../ListMessage';
-import ListNoti from '../../ListNoti';
+import ListMessage from '../../modules/ListMessage';
+import ListNoti from '../../modules/ListNoti';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
