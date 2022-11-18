@@ -337,7 +337,7 @@
 }
 .message-menu-list,
 .notification-menu-list {
-  @include pxRem(width, 300 !important);
+  @include pxRem(max-width, 300 !important);
   @include pxRem(left, 1124);
   @include pxRem(top, 56!important);
   box-shadow: rgb(0 0 0 / 5%) 0px 1px 2px 0px;

@@ -67,9 +67,11 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [anchorEl3, setAnchorEl3] = React.useState(null);
+  const [anchorEl4, setAnchorEl4] = React.useState(null);
   const open = Boolean(anchorEl);
   const open2 = Boolean(anchorEl2);
   const open3 = Boolean(anchorEl3);
+  const open4 = Boolean(anchorEl4);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -79,6 +81,9 @@ const Header = () => {
   const handleClick3 = (event) => {
     setAnchorEl3(event.currentTarget);
   };
+  const handleClick4 = (event) => {
+    setAnchorEl4(event.currentTarget);
+  };
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -87,6 +92,9 @@ const Header = () => {
   };
   const handleClose3 = () => {
     setAnchorEl3(null);
+  };
+  const handleClose4 = () => {
+    setAnchorEl4(null);
   };
   return (
     <AppBar
@@ -216,11 +224,27 @@ const Header = () => {
                 size='large'
                 aria-label='language'
                 color='inherit'
-                aria-haspopup={true}
+                onClick={handleClick4}
+                aria-controls={open ? 'language-menu' : undefined}
+                aria-haspopup='true'
+                aria-expanded={open ? 'true' : undefined}
               >
                 <LanguageIcon />
               </IconButton>
             </Tooltip>
+            <Menu
+              elevation={0}
+              id='language-menu'
+              anchorEl={anchorEl4}
+              open={open4}
+              onClick={handleClose4}
+              onClose={handleClose4}
+            >
+              <MenuItem onClick={handleClose4}>English</MenuItem>
+              <MenuItem onClick={handleClose4}>French</MenuItem>
+              <MenuItem onClick={handleClose4}>German</MenuItem>
+              <MenuItem onClick={handleClose4}>Dutch</MenuItem>
+            </Menu>
             <Tooltip title='Account'>
               <IconButton
                 size='large'

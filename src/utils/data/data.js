@@ -1,7 +1,7 @@
-import DnsIcon from '@mui/icons-material/Dns';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import HomeIcon from '@mui/icons-material/Home';
+import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 export const footer = [
   {
     title: 'Support',
@@ -37,22 +37,22 @@ export const message = [
 
 export const noti = [
   {
-    avatar: <DnsIcon color='white' fontSize='small' />,
+    avatar: <DnsOutlinedIcon color='white' fontSize='small' />,
     name: 'Update complete',
     content: 'Restart server to complete update.',
   },
   {
-    avatar: <PersonAddAlt1Icon color='white' fontSize='small' />,
+    avatar: <PersonAddAltOutlinedIcon color='white' fontSize='small' />,
     name: 'New connection',
-    content: 'Anna accepted your request..',
+    content: 'Anna accepted your request.',
   },
   {
-    avatar: <NotificationsIcon color='white' fontSize='small' />,
+    avatar: <NotificationsOutlinedIcon color='white' fontSize='small' />,
     name: 'Lorem ipsum',
     content: 'Aliquam ex eros, imperdiet vulputate hendrerit et.',
   },
   {
-    avatar: <HomeIcon color='white' fontSize='small' />,
+    avatar: <HomeOutlinedIcon color='white' fontSize='small' />,
     name: 'New login',
     content: 'Login from 192.186.1.1.',
   },

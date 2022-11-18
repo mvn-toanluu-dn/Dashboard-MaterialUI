@@ -39,7 +39,6 @@ const state = {
       borderColor: '#1976d2',
       borderWidth: 2,
       tension: 0.4,
-      fill: true,
       data: [
         2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327,
       ],
@@ -50,7 +49,6 @@ const state = {
       pointBackground: '#fff',
       pointBorderWidth: 2,
       tension: 0.4,
-      fill: false,
       borderDash: [5, 5],
       data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827],
     },
