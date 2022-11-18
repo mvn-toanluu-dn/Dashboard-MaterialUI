@@ -104,7 +104,7 @@ const Header = () => {
     >
       <Toolbar className='dashboard-content-toolbar'>
         <Grid container className='dashboard-content-grid'>
-          <Search>
+          <Search sx={{ display: 'flex' }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
