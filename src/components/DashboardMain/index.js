@@ -13,8 +13,10 @@ import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 import Chart from '../Chart';
 import CardList from '../Card';
-
+import '../../i18n';
+import { useTranslation } from 'react-i18next';
 const DashBoardMain = () => {
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -31,7 +33,7 @@ const DashBoardMain = () => {
             Default Dashboard
           </Typography>
           <Typography className='dashboard-main-subtitle' variant='subtitle1'>
-            Welcome back, Lucy! We've missed you.
+            {t('description')}
             <span aria-label='Waving Hand Sign'>👋</span>
           </Typography>
         </Grid>

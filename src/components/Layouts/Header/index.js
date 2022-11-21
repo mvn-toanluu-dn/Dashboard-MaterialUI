@@ -20,8 +20,10 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ListMessage from '../../modules/ListMessage';
 import ListNoti from '../../modules/ListNoti';
+import '../../../i18n';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -64,6 +66,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const Header = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setAnchorEl4(null);
+  };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [anchorEl3, setAnchorEl3] = React.useState(null);
@@ -93,9 +100,6 @@ const Header = () => {
   const handleClose3 = () => {
     setAnchorEl3(null);
   };
-  const handleClose4 = () => {
-    setAnchorEl4(null);
-  };
   return (
     <AppBar
       elevation={0}
@@ -110,7 +114,7 @@ const Header = () => {
             </SearchIconWrapper>
             <StyledInputBase
               className='dashboard-content-input'
-              placeholder='Search topics...'
+              placeholder={t('Search topics')}
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
@@ -225,9 +229,9 @@ const Header = () => {
                 aria-label='language'
                 color='inherit'
                 onClick={handleClick4}
-                aria-controls={open ? 'language-menu' : undefined}
+                aria-controls={open4 ? 'language-menu' : undefined}
                 aria-haspopup='true'
-                aria-expanded={open ? 'true' : undefined}
+                aria-expanded={open4 ? 'true' : undefined}
               >
                 <LanguageIcon />
               </IconButton>
@@ -237,13 +241,13 @@ const Header = () => {
               id='language-menu'
               anchorEl={anchorEl4}
               open={open4}
-              onClick={handleClose4}
-              onClose={handleClose4}
+              onClick={changeLanguage}
+              onClose={changeLanguage}
             >
-              <MenuItem onClick={handleClose4}>English</MenuItem>
-              <MenuItem onClick={handleClose4}>French</MenuItem>
-              <MenuItem onClick={handleClose4}>German</MenuItem>
-              <MenuItem onClick={handleClose4}>Dutch</MenuItem>
+              <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>
+              <MenuItem onClick={() => changeLanguage('fr')}>French</MenuItem>
+              <MenuItem onClick={() => changeLanguage('de')}>German</MenuItem>
+              <MenuItem onClick={() => changeLanguage('du')}>Dutch</MenuItem>
             </Menu>
             <Tooltip title='Account'>
               <IconButton
@@ -251,9 +255,9 @@ const Header = () => {
                 aria-label='account'
                 color='inherit'
                 onClick={handleClick2}
-                aria-controls={open ? 'account-menu' : undefined}
+                aria-controls={open2 ? 'account-menu' : undefined}
                 aria-haspopup='true'
-                aria-expanded={open ? 'true' : undefined}
+                aria-expanded={open2 ? 'true' : undefined}
               >
                 <PowerSettingsNewIcon />
               </IconButton>
