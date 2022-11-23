@@ -1,0 +1,8 @@
+.chat-badge {
+  span {
+    @include pxRem(width, 12);
+    @include pxRem(height, 12);
+    border-radius: 50%;
+    border: 1.5px solid rgb(255, 255, 255);
+  }
+}

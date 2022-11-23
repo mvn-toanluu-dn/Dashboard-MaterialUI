@@ -100,6 +100,9 @@ const Header = () => {
   const handleClose3 = () => {
     setAnchorEl3(null);
   };
+  const handleClose4 = () => {
+    setAnchorEl4(null);
+  };
   return (
     <AppBar
       elevation={0}
@@ -241,8 +244,7 @@ const Header = () => {
               id='language-menu'
               anchorEl={anchorEl4}
               open={open4}
-              onClick={changeLanguage}
-              onClose={changeLanguage}
+              onClose={handleClose4}
             >
               <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>
               <MenuItem onClick={() => changeLanguage('fr')}>French</MenuItem>

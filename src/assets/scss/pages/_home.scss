@@ -1,4 +1,18 @@
 .page-home {
+  .button-theme {
+    font-size: 0.8125rem;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    background-color: rgb(64, 122, 214);
+    color: white;
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+    &:hover {
+      background-color: rgb(64, 122, 214);
+    }
+  }
   .dashboard {
     &-content-flex {
       justify-content: space-between;
