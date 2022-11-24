@@ -39,7 +39,7 @@ const Chat = () => {
         >
           <ChatSideBar />
         </Grid>
-        <Grid item xs={12} md={8} lg={9}>
+        <Grid id='Me' item xs={12} md={8} lg={9}>
           <ChatContent />
         </Grid>
       </Card>

@@ -20,7 +20,7 @@ const ListChatSideBar = (props) => {
     <>
       {searchChat.map((item, index) => (
         <ListItem
-          href='/#'
+          href='/chat'
           component='a'
           key={index}
           sx={{ '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.04)' } }}

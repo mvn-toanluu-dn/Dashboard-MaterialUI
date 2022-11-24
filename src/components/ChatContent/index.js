@@ -1,3 +1,4 @@
+import SendIcon from '@mui/icons-material/Send';
 import {
   Avatar,
   Button,
@@ -9,18 +10,44 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { chatcontent } from '../../utils/data/data';
-import SendIcon from '@mui/icons-material/Send';
 
 const ChatContent = () => {
   const [message, setMessage] = useState([...chatcontent]);
   const [inputText, setInputText] = useState('');
   const currentUser = 2;
+  const btnRef = useRef();
+  const onKeyDown = (e) => {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+      const mess1 = message.filter((item) => item.id === currentUser);
+      setMessage([
+        ...message,
+        {
+          avatar: mess1[0].avatar,
+          name: mess1[0].name,
+          content: inputText,
+          time: 'now',
+          id: mess1[0].id,
+        },
+      ]);
+      setInputText('');
+      setTimeout(
+        () =>
+          btnRef.current.scrollTo(
+            0,
+            btnRef.current.clientHeight + btnRef.current.scrollHeight
+          ),
+        100
+      );
+    }
+    console.log(e.keyCode);
+  };
   const inputChange = (e) => {
     setInputText(e.target.value);
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     const mess1 = message.filter((item) => item.id === currentUser);
     setMessage([
       ...message,
@@ -33,10 +60,26 @@ const ChatContent = () => {
       },
     ]);
     setInputText('');
+    setTimeout(
+      () =>
+        btnRef.current.scrollTo({
+          top: btnRef.current.scrollHeight,
+        }),
+      100
+    );
   };
   return (
     <>
-      <List sx={{ p: 0, height: `calc(65vh - 94px)`, overflowY: 'scroll' }}>
+      <List
+        ref={btnRef}
+        className='chat-list-content'
+        sx={{
+          scrollBehavior: 'smooth',
+          p: 0,
+          height: `calc(65vh - 94px)`,
+          overflowY: 'scroll',
+        }}
+      >
         {message.map((item, index) => (
           <ListItem
             disablePadding={true}
@@ -111,17 +154,13 @@ const ChatContent = () => {
       <Grid container sx={{ alignItems: 'center', p: 2.5 }}>
         <Grid item sx={{ width: '93%' }}>
           {' '}
-          <Box
-            component='form'
-            sx={{ p: 0, '& > :not(style)': { width: '100%' } }}
-            noValidate
-            autoComplete='off'
-          >
+          <Box sx={{ p: 0, '& > :not(style)': { width: '100%' } }} noValidate>
             <TextField
               value={inputText}
               id='outlined-basic'
               label='Type your message'
               fullwidth='true'
+              onKeyUp={(e) => onKeyDown(e)}
               onChange={inputChange}
               InputLabelProps={{ style: { fontSize: '13px', marginBottom: 0 } }}
               inputProps={{
@@ -140,6 +179,7 @@ const ChatContent = () => {
         <Grid item sx={{ width: '7%' }}>
           <Box sx={{ ml: 1 }}>
             <Button
+              id='submit-form'
               onClick={handleSubmit}
               sx={{
                 p: 0,
