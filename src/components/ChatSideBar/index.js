@@ -1,8 +1,12 @@
 import { Box, Divider, Grid, List, TextField } from '@mui/material';
-import React from 'react';
-import ChatList from '../modules/ListChatSideBar';
-
+import React, { useState } from 'react';
+import ListChatSideBar from '../modules/ListChatSideBar';
 const ChatSideBar = () => {
+  const [inputText, setInputText] = useState('');
+  const inputHandler = (e) => {
+    const lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase);
+  };
   return (
     <Grid>
       <Box
@@ -14,6 +18,7 @@ const ChatSideBar = () => {
         <TextField
           id='outlined-basic'
           label='Search contacts'
+          onChange={inputHandler}
           fullwidth='true'
           InputLabelProps={{ style: { fontSize: '13px', marginBottom: 0 } }}
           inputProps={{
@@ -30,7 +35,7 @@ const ChatSideBar = () => {
       </Box>
       <Divider fullwidth='true' />
       <List disablePadding={true}>
-        <ChatList />
+        <ListChatSideBar input={inputText} />
       </List>
     </Grid>
   );

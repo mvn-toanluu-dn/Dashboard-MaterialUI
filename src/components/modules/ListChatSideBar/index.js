@@ -1,11 +1,24 @@
+import {
+  Avatar,
+  Badge,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+} from '@mui/material';
 import React from 'react';
 import { chatsidebar } from '../../../utils/data/data';
-import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import Badge from '@mui/material/Badge';
-const ChatList = () => {
+
+const ListChatSideBar = (props) => {
+  const searchChat = chatsidebar.filter((el) => {
+    if (props.input === '') {
+      return el;
+    } else {
+      return el.name.toLowerCase().includes(props.input);
+    }
+  });
   return (
     <>
-      {chatsidebar.map((item, index) => (
+      {searchChat.map((item, index) => (
         <ListItem
           href='/#'
           component='a'
@@ -43,4 +56,4 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;
+export default ListChatSideBar;

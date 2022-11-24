@@ -9,16 +9,35 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 import { chatcontent } from '../../utils/data/data';
 import SendIcon from '@mui/icons-material/Send';
 
 const ChatContent = () => {
+  const [message, setMessage] = useState([...chatcontent]);
+  const [inputText, setInputText] = useState('');
   const currentUser = 2;
+  const inputChange = (e) => {
+    setInputText(e.target.value);
+  };
+  const handleSubmit = () => {
+    const mess1 = message.filter((item) => item.id === currentUser);
+    setMessage([
+      ...message,
+      {
+        avatar: mess1[0].avatar,
+        name: mess1[0].name,
+        content: inputText,
+        time: 'now',
+        id: mess1[0].id,
+      },
+    ]);
+    setInputText('');
+  };
   return (
     <>
       <List sx={{ p: 0, height: `calc(65vh - 94px)`, overflowY: 'scroll' }}>
-        {chatcontent.map((item, index) => (
+        {message.map((item, index) => (
           <ListItem
             disablePadding={true}
             sx={{
@@ -99,14 +118,15 @@ const ChatContent = () => {
             autoComplete='off'
           >
             <TextField
+              value={inputText}
               id='outlined-basic'
               label='Type your message'
               fullwidth='true'
+              onChange={inputChange}
               InputLabelProps={{ style: { fontSize: '13px', marginBottom: 0 } }}
               inputProps={{
                 style: { padding: '16.5px 14px', height: '1.4375em' },
               }}
-              Input
               sx={{
                 '& .MuiInputBase-root': {
                   height: 51,
@@ -120,6 +140,7 @@ const ChatContent = () => {
         <Grid item sx={{ width: '7%' }}>
           <Box sx={{ ml: 1 }}>
             <Button
+              onClick={handleSubmit}
               sx={{
                 p: 0,
                 width: '48px',
@@ -128,9 +149,9 @@ const ChatContent = () => {
                 backgroundColor: 'rgb(55, 111, 208)',
                 color: 'rgb(255,255,255)',
                 minWidth: '0',
-                '&:hover': { backgroundColor: 'rgb(55, 111, 208)' },
+                '&:hover': { backgroundColor: 'rgb(38, 77, 145)' },
               }}
-              disableRipple='true'
+              disableRipple={true}
             >
               <SendIcon />
             </Button>
