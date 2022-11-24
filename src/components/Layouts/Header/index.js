@@ -1,10 +1,10 @@
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import LanguageIcon from '@mui/icons-material/Language';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import SearchIcon from '@mui/icons-material/Search';
 import {
   AppBar,
+  Avatar,
   Button,
   Grid,
   List,
@@ -21,9 +21,9 @@ import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import '../../../i18n';
 import ListMessage from '../../modules/ListMessage';
 import ListNoti from '../../modules/ListNoti';
-import '../../../i18n';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -236,7 +236,11 @@ const Header = () => {
                 aria-haspopup='true'
                 aria-expanded={open4 ? 'true' : undefined}
               >
-                <LanguageIcon />
+                <Avatar
+                  sx={{ width: '22px', height: '22px' }}
+                  src={t('avatar')}
+                  alt=''
+                />
               </IconButton>
             </Tooltip>
             <Menu
