@@ -1,14 +1,23 @@
-import React from 'react';
-// import { ThemeProvider, createTheme } from '@mui/material/styles';
-import ColorLensIcon from '@mui/icons-material/ColorLens';
-import { Button } from '@mui/material';
-const Theme = () => {
-    
-  return (
-    <Button disableRipple={true} size='large' className='button-theme'>
-      <ColorLensIcon fontSize='medium' />
-    </Button>
-  );
-};
+import { createTheme } from '@mui/material/styles';
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: 'rgb(27, 38, 53)',
+      contrastText: '#FFFFFF',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+    background: {
+      default: 'rgb(27, 38, 53)',
+      paper: 'rgb(35, 48, 68)',
+    },
+  },
+});
 
-export default Theme;
+const defaultTheme = createTheme({
+
+});
+
+export {darkTheme,defaultTheme}

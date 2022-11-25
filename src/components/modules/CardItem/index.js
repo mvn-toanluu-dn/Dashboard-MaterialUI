@@ -16,7 +16,7 @@ const CardItem = ({ item, index }) => {
             <span>{item.percent}</span>
             {item.time}
           </Typography>
-          {item.chip && <Chip className='card-item-chip' label={item.chip} color='primary'></Chip>}
+          {item.chip && <Chip className='card-item-chip' label={item.chip} ></Chip>}
         </CardContent>
       </Card>
     </Grid>
