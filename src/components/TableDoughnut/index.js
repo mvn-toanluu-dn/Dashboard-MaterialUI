@@ -35,7 +35,7 @@ const TableDoughnut = () => {
                   {row.name}
                 </TableCell>
                 <TableCell align='right'>{row.number}</TableCell>
-                <TableCell align='right'>{row.percent}</TableCell>
+                <TableCell className='chart-doughnut-table-percent' align='right'>{row.percent}%</TableCell>
               </TableRow>
             ))}
           </TableBody>

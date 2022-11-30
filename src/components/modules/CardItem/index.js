@@ -12,11 +12,21 @@ const CardItem = ({ item, index }) => {
           <Typography className='card-item-number' variant='h3'>
             {item.number}
           </Typography>
-          <Typography className='card-item-percent' variant='subtitle2'>
+          <Typography
+            className='card-item-percent'
+            variant='subtitle2'
+            color='secondary'
+          >
             <span>{item.percent}</span>
             {item.time}
           </Typography>
-          {item.chip && <Chip className='card-item-chip' label={item.chip} ></Chip>}
+          {item.chip && (
+            <Chip
+              className='card-item-chip'
+              label={item.chip}
+              color='primary'
+            ></Chip>
+          )}
         </CardContent>
       </Card>
     </Grid>

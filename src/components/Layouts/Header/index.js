@@ -12,13 +12,13 @@ import {
   MenuItem,
   Toolbar,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../../i18n';
@@ -26,11 +26,6 @@ import ListMessage from '../../modules/ListMessage';
 import ListNoti from '../../modules/ListNoti';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
@@ -60,9 +55,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
+
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
+    variant: 'outline',
   },
 }));
 const Header = () => {
@@ -103,11 +100,17 @@ const Header = () => {
   const handleClose4 = () => {
     setAnchorEl4(null);
   };
+
   return (
     <AppBar
       elevation={0}
       className='dashboard-content-background'
       position='sticky'
+      color='header'
+      sx={{
+        minHeight: '64px',
+        borderRadius: 0,
+      }}
     >
       <Toolbar className='dashboard-content-toolbar'>
         <Grid container className='dashboard-content-grid'>

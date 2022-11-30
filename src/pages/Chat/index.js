@@ -1,10 +1,10 @@
 import {
+  Box,
   Breadcrumbs,
   Card,
   Divider,
   Grid,
   Link,
-  Paper,
   Typography,
 } from '@mui/material';
 import React from 'react';
@@ -13,7 +13,7 @@ import ChatSideBar from '../../components/ChatSideBar';
 
 const Chat = () => {
   return (
-    <Paper className='dashboard-content-main chat' elevation={0}>
+    <Box className='dashboard-content-main chat' elevation={0}>
       <Typography className='dashboard-main-title title' variant='h3'>
         Chat
       </Typography>
@@ -24,7 +24,11 @@ const Chat = () => {
         <Link underline='hover' color='primary' href='/*'>
           Pages
         </Link>
-        <Typography fontSize='small' color='text.primary'>
+        <Typography
+          className='dashboard-link'
+          fontSize='small'
+          color='text.primary'
+        >
           Chat
         </Typography>
       </Breadcrumbs>
@@ -43,7 +47,7 @@ const Chat = () => {
           <ChatContent />
         </Grid>
       </Card>
-    </Paper>
+    </Box>
   );
 };
 

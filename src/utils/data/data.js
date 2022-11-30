@@ -4,6 +4,14 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import TuneIcon from '@mui/icons-material/Tune';
 import WebIcon from '@mui/icons-material/Web';
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
+import LaunchOutlinedIcon from '@mui/icons-material/LaunchOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 export const footer = [
   {
     title: 'Support',
@@ -146,7 +154,6 @@ export const chatcontent = [
       'Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.',
     time: '12 minutes ago',
     id: 2,
-
   },
   {
     avatar: 'https://mira.bootlab.io/static/img/avatars/avatar-2.jpg',
@@ -154,7 +161,6 @@ export const chatcontent = [
     content: 'Cum ea graeci tractatos. 😄',
     time: '8 minutes ago',
     id: 1,
-
   },
   {
     avatar: 'https://mira.bootlab.io/static/img/avatars/avatar-1.jpg',
@@ -171,5 +177,102 @@ export const chatcontent = [
       'Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.',
     time: '3 minutes ago',
     id: 1,
+  },
+];
+
+export const skillchip = [
+  {
+    id: 1,
+    title: 'HTML',
+  },
+  {
+    id: 2,
+    title: 'Javascript',
+  },
+  {
+    id: 3,
+    title: 'Sass',
+  },
+  {
+    id: 4,
+    title: 'React',
+  },
+  {
+    id: 5,
+    title: 'Redux',
+  },
+  {
+    id: 6,
+    title: 'Next.js',
+  },
+  {
+    id: 7,
+    title: 'Material UI',
+  },
+  {
+    id: 8,
+    title: 'UI',
+  },
+  {
+    id: 9,
+    title: 'UX',
+  },
+];
+
+export const aboutlink = [
+  {
+    icon: <HomeOutlinedIcon />,
+    title: 'Lives in',
+    content: 'San Fransisco, SA',
+  },
+  {
+    icon: <WorkOutlineOutlinedIcon />,
+    title: 'Work at',
+    content: 'Material UI',
+  },
+  {
+    icon: <FmdGoodOutlinedIcon />,
+    title: 'Lives in',
+    content: 'Boston',
+  },
+];
+
+export const cardprofileitem = [
+  {
+    amount: '$ 2.405',
+    title: 'Total Earnings',
+    icon: <AttachMoneyIcon color='primary' />,
+    progress: 75,
+  },
+  {
+    amount: '30',
+    title: 'Order Today',
+    icon: <LocalMallOutlinedIcon color='primary' />,
+    progress: 30,
+  },
+  {
+    amount: '$ 1.124',
+    title: 'Total Renevue',
+    icon: <AttachMoneyIcon color='primary' />,
+    progress: 50,
+  },
+];
+
+export const elsewhere = [
+  {
+    icon: <LaunchOutlinedIcon />,
+    info: 'lucylavender.io',
+  },
+  {
+    icon: <TwitterIcon />,
+    info: 'Twitter',
+  },
+  {
+    icon: <FacebookOutlinedIcon />,
+    info: 'Facebook',
+  },
+  {
+    icon: <InstagramIcon />,
+    info: 'Instagram',
   },
 ];

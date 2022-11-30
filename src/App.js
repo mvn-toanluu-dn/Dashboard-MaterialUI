@@ -9,12 +9,15 @@ import DashBoard from './pages/Dashboard';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import { useState } from 'react';
 import { darkTheme, defaultTheme } from './components/Layouts/Theme';
+import CssBaseline from '@mui/material/CssBaseline';
+import Profile from './pages/Profile';
 function App() {
   const [isChange, setIsChange] = useState(false);
 
   return (
     <ThemeProvider theme={isChange ? darkTheme : defaultTheme}>
-      <div className='page-home '>
+      <CssBaseline />
+      <div className='page-home'>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container>
             <Grid item xs={2.15} className='dashboard-sidebar'>
@@ -25,6 +28,7 @@ function App() {
               <Routes>
                 <Route path='/*' element={<DashBoard />} />
                 <Route path='/chat' element={<Chat />} />
+                <Route path='/profile' element={<Profile />} />
               </Routes>
               <Footer />
             </Grid>

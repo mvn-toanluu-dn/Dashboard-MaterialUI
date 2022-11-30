@@ -1,20 +1,20 @@
+import FilterListIcon from '@mui/icons-material/FilterList';
+import LoopIcon from '@mui/icons-material/Loop';
 import {
+  Box,
   Button,
   Divider,
   Grid,
   IconButton,
   Menu,
-  Paper,
   Typography,
 } from '@mui/material';
-import LoopIcon from '@mui/icons-material/Loop';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
-import '../../i18n';
 import { useTranslation } from 'react-i18next';
-import Chart from '../../components/Chart';
 import CardList from '../../components/Card';
+import Chart from '../../components/Chart';
+import '../../i18n';
 const DashBoard = () => {
   const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -26,7 +26,10 @@ const DashBoard = () => {
     setAnchorEl(null);
   };
   return (
-    <Paper className='dashboard-content-main' elevation={0}>
+    <Box
+      className='dashboard-content-main'
+      elevation={0}
+    >
       <Grid container className='dashboard-content-flex'>
         <Grid item>
           <Typography className='dashboard-main-title' variant='h3'>
@@ -81,7 +84,7 @@ const DashBoard = () => {
       <Divider className='dashboard-content-hr' />
       <CardList />
       <Chart />
-    </Paper>
+    </Box>
   );
 };
 
